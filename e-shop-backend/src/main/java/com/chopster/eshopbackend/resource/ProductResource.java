@@ -2,6 +2,7 @@ package com.chopster.eshopbackend.resource;
 
 import com.chopster.eshopbackend.model.Product;
 import com.chopster.eshopbackend.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/product")
 public class ProductResource {
-    private final ProductService productService;
+    @Autowired
+    private ProductService productService;
 
     public ProductResource(ProductService productService) {
         this.productService = productService;
@@ -24,7 +26,7 @@ public class ProductResource {
     }
 
     @GetMapping("/find/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable("id") Integer id){
+    public ResponseEntity<Product> getProductById(@PathVariable("id") Long id){
         Product product = productService.findProductById(id);
         return new ResponseEntity<>(product, HttpStatus.OK);
     }
@@ -42,7 +44,7 @@ public class ProductResource {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deletePaymentMethod(@PathVariable("id") Integer id){
+    public ResponseEntity<?> deletePaymentMethod(@PathVariable("id") Long id){
         productService.deleteProduct(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

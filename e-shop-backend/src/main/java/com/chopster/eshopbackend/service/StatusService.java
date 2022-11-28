@@ -29,11 +29,11 @@ public class StatusService {
         return statusRepo.save(status);
     }
 
-    public Status findStatusById(Integer id){
+    public Status findStatusById(Long id){
         return statusRepo.findStatusById(id).orElseThrow(() -> new StatusNotFoundException("Status by id " + id + " was not found."));
     }
 
-    public void deleteStatus(Integer id){
+    public void deleteStatus(Long id){
         statusRepo.deleteStatusById(id);
     }
 }

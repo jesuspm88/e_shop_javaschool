@@ -2,6 +2,7 @@ package com.chopster.eshopbackend.resource;
 
 import com.chopster.eshopbackend.model.Address;
 import com.chopster.eshopbackend.service.AddressService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/address")
 public class AddressResource {
-    private final AddressService addressService;
+    @Autowired
+    private AddressService addressService;
 
     public AddressResource(AddressService addressService) {
         this.addressService = addressService;
@@ -24,7 +26,7 @@ public class AddressResource {
     }
 
     @GetMapping("/find/{id}")
-    public ResponseEntity<Address> getAddressById(@PathVariable("id") Integer id){
+    public ResponseEntity<Address> getAddressById(@PathVariable("id") Long id){
         Address address = addressService.findAddressById(id);
         return new ResponseEntity<>(address, HttpStatus.OK);
     }
@@ -42,7 +44,7 @@ public class AddressResource {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteAddress(@PathVariable("id") Integer id){
+    public ResponseEntity<?> deleteAddress(@PathVariable("id") Long id){
         addressService.deleteAddress(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

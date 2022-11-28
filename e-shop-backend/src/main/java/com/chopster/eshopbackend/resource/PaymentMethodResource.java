@@ -2,6 +2,7 @@ package com.chopster.eshopbackend.resource;
 
 import com.chopster.eshopbackend.model.PaymentMethod;
 import com.chopster.eshopbackend.service.PaymentMethodService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/payment-method")
 public class PaymentMethodResource {
-    private final PaymentMethodService paymentMethodService;
+    @Autowired
+    private PaymentMethodService paymentMethodService;
 
     public PaymentMethodResource(PaymentMethodService paymentMethodService) {
         this.paymentMethodService = paymentMethodService;
@@ -24,7 +26,7 @@ public class PaymentMethodResource {
     }
 
     @GetMapping("/find/{id}")
-    public ResponseEntity<PaymentMethod> getPaymentMethodById(@PathVariable("id") Integer id){
+    public ResponseEntity<PaymentMethod> getPaymentMethodById(@PathVariable("id") Long id){
         PaymentMethod paymentMethod = paymentMethodService.findPaymentMethodById(id);
         return new ResponseEntity<>(paymentMethod, HttpStatus.OK);
     }
@@ -42,7 +44,7 @@ public class PaymentMethodResource {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deletePaymentMethod(@PathVariable("id") Integer id){
+    public ResponseEntity<?> deletePaymentMethod(@PathVariable("id") Long id){
         paymentMethodService.deletePaymentMethod(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

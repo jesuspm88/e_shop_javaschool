@@ -2,6 +2,7 @@ package com.chopster.eshopbackend.resource;
 
 import com.chopster.eshopbackend.model.User;
 import com.chopster.eshopbackend.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,8 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+
 public class UserResource {
-    private final UserService userService;
+    @Autowired
+    private UserService userService;
 
     public UserResource(UserService userService) {
         this.userService = userService;
@@ -24,7 +27,7 @@ public class UserResource {
     }
 
     @GetMapping("/find/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable("id") Integer id){
+    public ResponseEntity<User> getUserById(@PathVariable("id") Long id){
         User user = userService.findUserById(id);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
@@ -42,7 +45,7 @@ public class UserResource {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable("id") Integer id){
+    public ResponseEntity<?> deleteUser(@PathVariable("id") Long id){
         userService.deleteUser(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

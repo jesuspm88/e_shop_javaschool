@@ -2,6 +2,7 @@ package com.chopster.eshopbackend.resource;
 
 import com.chopster.eshopbackend.model.Category;
 import com.chopster.eshopbackend.service.CategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/category")
 public class CategoryResource {
-    private final CategoryService categoryService;
+    @Autowired
+    private CategoryService categoryService;
 
     public CategoryResource(CategoryService categoryService) {
         this.categoryService = categoryService;
@@ -24,7 +26,7 @@ public class CategoryResource {
     }
 
     @GetMapping("/find/{id}")
-    public ResponseEntity<Category> getCategoryById(@PathVariable("id") Integer id){
+    public ResponseEntity<Category> getCategoryById(@PathVariable("id") Long id){
         Category category = categoryService.findCategoryById(id);
         return new ResponseEntity<>(category, HttpStatus.OK);
     }
@@ -42,7 +44,7 @@ public class CategoryResource {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteCategory(@PathVariable("id") Integer id){
+    public ResponseEntity<?> deleteCategory(@PathVariable("id") Long id){
         categoryService.deleteCategory(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

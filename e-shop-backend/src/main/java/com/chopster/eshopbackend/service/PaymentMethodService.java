@@ -29,11 +29,11 @@ public class PaymentMethodService {
         return paymentMethodRepo.save(paymentMethod);
     }
 
-    public PaymentMethod findPaymentMethodById(Integer id){
+    public PaymentMethod findPaymentMethodById(Long id){
         return paymentMethodRepo.findPaymentMethodById(id).orElseThrow(() -> new PaymentMethodNotFoundException("Payment method by id " + id + " was not found."));
     }
 
-    public void deletePaymentMethod(Integer id){
+    public void deletePaymentMethod(Long id){
         paymentMethodRepo.deletePaymentMethodById(id);
     }
 }

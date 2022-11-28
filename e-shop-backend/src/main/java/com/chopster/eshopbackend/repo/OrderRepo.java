@@ -5,8 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface OrderRepo extends JpaRepository<Order, Integer> {
-    void deleteOrderById(Integer id);
+public interface OrderRepo extends JpaRepository<Order, Long> {
+    void deleteOrderById(Long id);
 
-    Optional<Order> findOrderById(Integer id);
+    Optional<Order> findOrderById(Long id);
 }

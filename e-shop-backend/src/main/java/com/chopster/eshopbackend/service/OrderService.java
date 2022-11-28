@@ -29,11 +29,11 @@ public class OrderService {
         return orderRepo.save(order);
     }
 
-    public Order findOrderById(Integer id){
+    public Order findOrderById(Long id){
         return orderRepo.findOrderById(id).orElseThrow(() -> new OrderNotFoundException("Order by id " + id + " was not found."));
     }
 
-    public void deleteOrder(Integer id){
+    public void deleteOrder(Long id){
         orderRepo.deleteOrderById(id);
     }
 }

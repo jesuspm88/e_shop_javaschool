@@ -29,11 +29,11 @@ public class UserService {
         return userRepo.save(user);
     }
 
-    public User findUserById(Integer id){
+    public User findUserById(Long id){
         return userRepo.findUserById(id).orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found."));
     }
 
-    public void deleteUser(Integer id){
+    public void deleteUser(Long id){
         userRepo.deleteUserById(id);
     }
 }

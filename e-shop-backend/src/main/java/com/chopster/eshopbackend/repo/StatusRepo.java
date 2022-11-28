@@ -5,8 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface StatusRepo extends JpaRepository<Status, Integer> {
-    void deleteStatusById(Integer id);
+public interface StatusRepo extends JpaRepository<Status, Long> {
+    void deleteStatusById(Long id);
 
-    Optional<Status> findStatusById(Integer id);
+    Optional<Status> findStatusById(Long id);
 }

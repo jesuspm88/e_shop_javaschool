@@ -29,11 +29,11 @@ public class AddressService {
         return addressRepo.save(address);
     }
 
-    public Address findAddressById(Integer id){
+    public Address findAddressById(Long id){
         return addressRepo.findAddressById(id).orElseThrow(() -> new AddressNotFoundException("Address by id " + id + " was not found."));
     }
 
-    public void deleteAddress(Integer id){
+    public void deleteAddress(Long id){
         addressRepo.deleteAddressById(id);
     }
 }

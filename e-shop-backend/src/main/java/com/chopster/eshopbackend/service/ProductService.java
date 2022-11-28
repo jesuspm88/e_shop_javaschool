@@ -29,11 +29,11 @@ public class ProductService {
         return productRepo.save(product);
     }
 
-    public Product findProductById(Integer id){
+    public Product findProductById(Long id){
         return productRepo.findProductById(id).orElseThrow(() -> new ProductNotFoundException("Product by id " + id + " was not found."));
     }
 
-    public void deleteProduct(Integer id){
+    public void deleteProduct(Long id){
         productRepo.deleteProductById(id);
     }
 }

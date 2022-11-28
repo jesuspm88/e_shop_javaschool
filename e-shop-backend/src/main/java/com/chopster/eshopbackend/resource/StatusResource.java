@@ -2,6 +2,7 @@ package com.chopster.eshopbackend.resource;
 
 import com.chopster.eshopbackend.model.Status;
 import com.chopster.eshopbackend.service.StatusService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/status")
 public class StatusResource {
-    private final StatusService statusService;
+    @Autowired
+    private StatusService statusService;
 
     public StatusResource(StatusService statusService) {
         this.statusService = statusService;
@@ -24,7 +26,7 @@ public class StatusResource {
     }
 
     @GetMapping("/find/{id}")
-    public ResponseEntity<Status> getStatusById(@PathVariable("id") Integer id){
+    public ResponseEntity<Status> getStatusById(@PathVariable("id") Long id){
         Status status = statusService.findStatusById(id);
         return new ResponseEntity<>(status, HttpStatus.OK);
     }
@@ -42,7 +44,7 @@ public class StatusResource {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteStatus(@PathVariable("id") Integer id){
+    public ResponseEntity<?> deleteStatus(@PathVariable("id") Long id){
         statusService.deleteStatus(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

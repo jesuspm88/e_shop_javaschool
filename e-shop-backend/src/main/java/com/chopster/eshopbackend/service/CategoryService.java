@@ -29,11 +29,11 @@ public class CategoryService {
         return categoryRepo.save(category);
     }
 
-    public Category findCategoryById(Integer id){
+    public Category findCategoryById(Long id){
         return categoryRepo.findCategoryById(id).orElseThrow(() -> new CategoryNotFoundException("Category by id " + id + " was not found."));
     }
 
-    public void deleteCategory(Integer id){
+    public void deleteCategory(Long id){
         categoryRepo.deleteCategoryById(id);
     }
 }

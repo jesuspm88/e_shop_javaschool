@@ -5,8 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface AddressRepo extends JpaRepository<Address, Integer> {
-    void deleteAddressById(Integer id);
+public interface AddressRepo extends JpaRepository<Address, Long> {
+    void deleteAddressById(Long id);
 
-    Optional<Address> findAddressById(Integer id);
+    Optional<Address> findAddressById(Long id);
 }
