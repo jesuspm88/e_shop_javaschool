@@ -23,7 +23,7 @@ public class StatusService {
         return statusRepo.findAll();
     }
 
-    public static Status updateStatus(Status status){
+    public Status updateStatus(Status status){
         return statusRepo.save(status);
     }
 

@@ -23,7 +23,7 @@ public class Product implements Serializable{
     private Integer product_category_id;
     private Integer product_stock;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "pxo_product")
     Set<ProductPerOrder> productsPerOrder;
 
 

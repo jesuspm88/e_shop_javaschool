@@ -37,7 +37,7 @@ public class StatusResource {
 
     @PutMapping("/update")
     public ResponseEntity<Status> updateStatus(@RequestBody Status status){
-        Status updateStatus = StatusService.updateStatus(status);
+        Status updateStatus = statusService.updateStatus(status);
         return new ResponseEntity<>(updateStatus, HttpStatus.OK);
     }
 

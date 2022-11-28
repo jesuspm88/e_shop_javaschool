@@ -3,6 +3,7 @@ package com.chopster.eshopbackend.model;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "address")
@@ -16,7 +17,8 @@ public class Address implements Serializable{
     private String address_city;
     private String address_state;
     private String address_zip;
-
+    @ManyToMany(mappedBy = "ownedAdresses")
+    Set<User> addressOwners;
     public Address() {
     }
 }

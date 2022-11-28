@@ -7,16 +7,14 @@ import java.io.Serializable;
 @Entity
 public class ProductPerOrder implements Serializable {
     @EmbeddedId
-    ProductPerOrderKey id;
+    Integer id;
 
     @ManyToOne
-    @MapsId("orderId")
-    @JoinColumn(name = "pxo_order_id")
-    private Order order;
+    @JoinColumn(name = "order_id")
+    private Order pxo_order;
     @ManyToOne
-    @MapsId("productId")
-    @JoinColumn(name = "pxo_product_id")
-    private Product product;
+    @JoinColumn(name = "product_id")
+    private Product pxo_product;
 
     private Integer pxo_quantity;
 

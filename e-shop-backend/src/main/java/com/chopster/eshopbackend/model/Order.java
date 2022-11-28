@@ -23,7 +23,7 @@ public class Order implements Serializable {
     private Boolean order_payment_status;
     private Integer order_status_id;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "pxo_order")
     Set<ProductPerOrder> productsPerOrder;
 
     public Order() {
