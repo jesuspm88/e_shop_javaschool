@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class OrderService {
     @Autowired
-    private final OrderRepo orderRepo;
+    private OrderRepo orderRepo;
 
     public OrderService(OrderRepo orderRepo) {
         this.orderRepo = orderRepo;

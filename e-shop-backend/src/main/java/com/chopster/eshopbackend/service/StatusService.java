@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class StatusService {
     @Autowired
-    private final StatusRepo statusRepo;
+    private StatusRepo statusRepo;
 
     public StatusService(StatusRepo statusRepo) {
         this.statusRepo = statusRepo;

@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class AddressService {
     @Autowired
-    private final AddressRepo addressRepo;
+    private AddressRepo addressRepo;
 
     public AddressService(AddressRepo addressRepo) {
         this.addressRepo = addressRepo;

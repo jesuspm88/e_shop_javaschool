@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class PaymentMethodService {
     @Autowired
-    private final PaymentMethodRepo paymentMethodRepo;
+    private PaymentMethodRepo paymentMethodRepo;
 
     public PaymentMethodService(PaymentMethodRepo paymentMethodRepo) {
         this.paymentMethodRepo = paymentMethodRepo;
