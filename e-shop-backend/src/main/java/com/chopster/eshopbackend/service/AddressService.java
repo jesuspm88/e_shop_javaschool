@@ -10,9 +10,9 @@ import java.util.List;
 
 @Service
 public class AddressService {
+    @Autowired
     private final AddressRepo addressRepo;
 
-    @Autowired
     public AddressService(AddressRepo addressRepo) {
         this.addressRepo = addressRepo;
     }
@@ -22,7 +22,7 @@ public class AddressService {
     }
 
     public List<Address> findAllAddresses() {
-        return addressRepo.findAll();
+        return (List<Address>) addressRepo.findAll();
     }
 
     public Address updateAddress(Address address){

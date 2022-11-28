@@ -10,9 +10,9 @@ import java.util.List;
 
 @Service
 public class OrderService {
+    @Autowired
     private final OrderRepo orderRepo;
 
-    @Autowired
     public OrderService(OrderRepo orderRepo) {
         this.orderRepo = orderRepo;
     }

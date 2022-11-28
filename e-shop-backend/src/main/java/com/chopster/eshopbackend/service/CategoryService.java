@@ -10,9 +10,9 @@ import java.util.List;
 
 @Service
 public class CategoryService {
+    @Autowired
     private final CategoryRepo categoryRepo;
 
-    @Autowired
     public CategoryService(CategoryRepo categoryRepo) {
         this.categoryRepo = categoryRepo;
     }
