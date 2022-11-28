@@ -1,9 +1,9 @@
 package com.chopster.eshopbackend.model;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -12,19 +12,101 @@ public class Order implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "order_id", nullable = false, updatable = false)
-    private Integer order_id;
-    private Integer order_user_id;
-    private String order_address_id;
-    private Date order_date;
-    private Float order_price;
-    private Integer order_payment_method;
-    private String order_delivery;
-    private Boolean order_payment_status;
-    private Integer order_status_id;
+    @Column(name = "id", nullable = false, updatable = false)
+    private Long id;
 
-    @OneToMany(mappedBy = "pxo_order")
-    Set<ProductPerOrder> productsPerOrder;
+    @ManyToOne
+    private User user;
+    @ManyToOne
+    private Address address;
+    private Date date;
+    private Float price;
+    @ManyToOne
+    private PaymentMethod paymentMethod;
+    private String delivery;
+    private Boolean paymentStatus;
+    @ManyToOne
+    private Status status;
+
+    @OneToMany(mappedBy = "order")
+    List<ProductPerOrder> productsPerOrder;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getUser() { return user; }
+
+    public void setUser(User user) { this.user = user; }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
+    }
+
+    public PaymentMethod getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public String getDelivery() {
+        return delivery;
+    }
+
+    public void setDelivery(String delivery) {
+        this.delivery = delivery;
+    }
+
+    public Boolean getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(Boolean paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public List<ProductPerOrder> getProductsPerOrder() {
+        return productsPerOrder;
+    }
+
+    public void setProductsPerOrder(List<ProductPerOrder> productsPerOrder) {
+        this.productsPerOrder = productsPerOrder;
+    }
 
     public Order() {
     }
