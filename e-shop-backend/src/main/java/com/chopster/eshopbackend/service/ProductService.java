@@ -4,9 +4,11 @@ import com.chopster.eshopbackend.exception.ProductNotFoundException;
 import com.chopster.eshopbackend.model.Product;
 import com.chopster.eshopbackend.repo.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductService {
     private final ProductRepo productRepo;
 

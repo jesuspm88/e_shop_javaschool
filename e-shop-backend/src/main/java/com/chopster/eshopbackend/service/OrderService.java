@@ -4,9 +4,11 @@ import com.chopster.eshopbackend.exception.OrderNotFoundException;
 import com.chopster.eshopbackend.model.Order;
 import com.chopster.eshopbackend.repo.OrderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class OrderService {
     private final OrderRepo orderRepo;
 

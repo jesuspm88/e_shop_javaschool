@@ -4,9 +4,11 @@ import com.chopster.eshopbackend.exception.UserNotFoundException;
 import com.chopster.eshopbackend.model.User;
 import com.chopster.eshopbackend.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserService {
     private final UserRepo userRepo;
 

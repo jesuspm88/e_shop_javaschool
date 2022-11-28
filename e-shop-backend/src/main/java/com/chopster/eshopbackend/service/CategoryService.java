@@ -4,9 +4,11 @@ import com.chopster.eshopbackend.exception.CategoryNotFoundException;
 import com.chopster.eshopbackend.model.Category;
 import com.chopster.eshopbackend.repo.CategoryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CategoryService {
     private final CategoryRepo categoryRepo;
 

@@ -4,9 +4,11 @@ import com.chopster.eshopbackend.exception.PaymentMethodNotFoundException;
 import com.chopster.eshopbackend.model.PaymentMethod;
 import com.chopster.eshopbackend.repo.PaymentMethodRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class PaymentMethodService {
     private final PaymentMethodRepo paymentMethodRepo;
 

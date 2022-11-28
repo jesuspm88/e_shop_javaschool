@@ -4,9 +4,11 @@ import com.chopster.eshopbackend.exception.StatusNotFoundException;
 import com.chopster.eshopbackend.model.Status;
 import com.chopster.eshopbackend.repo.StatusRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class StatusService {
     private final StatusRepo statusRepo;
 

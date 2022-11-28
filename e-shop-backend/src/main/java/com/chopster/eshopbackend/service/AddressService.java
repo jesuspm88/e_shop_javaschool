@@ -4,9 +4,11 @@ import com.chopster.eshopbackend.exception.AddressNotFoundException;
 import com.chopster.eshopbackend.model.Address;
 import com.chopster.eshopbackend.repo.AddressRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class AddressService {
     private final AddressRepo addressRepo;
 
