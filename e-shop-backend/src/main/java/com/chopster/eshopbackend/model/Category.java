@@ -1,6 +1,6 @@
 package com.chopster.eshopbackend.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.io.Serializable;
 import java.util.List;
