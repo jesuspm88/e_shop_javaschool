@@ -2,7 +2,7 @@ package com.chopster.eshopbackend.service;
 
 import com.chopster.eshopbackend.exception.OrderNotFoundException;
 import com.chopster.eshopbackend.model.Order;
-import com.chopster.eshopbackend.repo.OrderRepo;
+import com.chopster.eshopbackend.model.repo.OrderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

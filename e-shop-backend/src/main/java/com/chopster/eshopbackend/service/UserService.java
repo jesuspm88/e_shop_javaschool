@@ -2,7 +2,7 @@ package com.chopster.eshopbackend.service;
 
 import com.chopster.eshopbackend.exception.UserNotFoundException;
 import com.chopster.eshopbackend.model.User;
-import com.chopster.eshopbackend.repo.UserRepo;
+import com.chopster.eshopbackend.model.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

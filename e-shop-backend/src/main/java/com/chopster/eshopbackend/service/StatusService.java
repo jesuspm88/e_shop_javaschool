@@ -2,7 +2,7 @@ package com.chopster.eshopbackend.service;
 
 import com.chopster.eshopbackend.exception.StatusNotFoundException;
 import com.chopster.eshopbackend.model.Status;
-import com.chopster.eshopbackend.repo.StatusRepo;
+import com.chopster.eshopbackend.model.repo.StatusRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

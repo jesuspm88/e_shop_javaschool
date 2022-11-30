@@ -2,7 +2,7 @@ package com.chopster.eshopbackend.service;
 
 import com.chopster.eshopbackend.exception.AddressNotFoundException;
 import com.chopster.eshopbackend.model.Address;
-import com.chopster.eshopbackend.repo.AddressRepo;
+import com.chopster.eshopbackend.model.repo.AddressRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

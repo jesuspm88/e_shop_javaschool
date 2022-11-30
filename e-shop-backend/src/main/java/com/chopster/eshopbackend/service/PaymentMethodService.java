@@ -2,7 +2,7 @@ package com.chopster.eshopbackend.service;
 
 import com.chopster.eshopbackend.exception.PaymentMethodNotFoundException;
 import com.chopster.eshopbackend.model.PaymentMethod;
-import com.chopster.eshopbackend.repo.PaymentMethodRepo;
+import com.chopster.eshopbackend.model.repo.PaymentMethodRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
