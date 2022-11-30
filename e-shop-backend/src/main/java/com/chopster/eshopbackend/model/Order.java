@@ -1,10 +1,17 @@
 package com.chopster.eshopbackend.model;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
-import java.util.Set;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
 
 @Entity
 @Table(name = "order")
@@ -12,7 +19,6 @@ public class Order implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
     @ManyToOne
@@ -21,8 +27,10 @@ public class Order implements Serializable {
     private Address address;
     private Date date;
     private Float price;
+
     @ManyToOne
     private PaymentMethod paymentMethod;
+
     private String delivery;
     private Boolean paymentStatus;
     @ManyToOne

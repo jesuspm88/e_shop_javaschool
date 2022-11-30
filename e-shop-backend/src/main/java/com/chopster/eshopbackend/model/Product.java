@@ -1,9 +1,15 @@
 package com.chopster.eshopbackend.model;
 
-import javax.persistence.*;
-
 import java.io.Serializable;
 import java.util.Set;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "product")
@@ -11,7 +17,6 @@ public class Product implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false, updatable = false)
     private Long id;
     private String name;
     private Float price;
@@ -117,3 +122,4 @@ public class Product implements Serializable{
     }
 
 }
+
