@@ -40,6 +40,5 @@ public class Status implements Serializable {
     public void setOrderList(List<Order> orderList) {
         this.orderList = orderList;
     }
-    public Status() {
-    }
+
 }

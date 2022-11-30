@@ -108,6 +108,4 @@ public class Order implements Serializable {
         this.productsPerOrder = productsPerOrder;
     }
 
-    public Order() {
-    }
 }

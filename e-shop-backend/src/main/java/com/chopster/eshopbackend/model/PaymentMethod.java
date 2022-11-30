@@ -39,6 +39,4 @@ public class PaymentMethod implements Serializable {
         this.orderList = orderList;
     }
 
-    public PaymentMethod() {
-    }
 }

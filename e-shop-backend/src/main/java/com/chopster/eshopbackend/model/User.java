@@ -106,6 +106,4 @@ public class User implements Serializable {
         this.orderList = orderList;
     }
 
-    public User() {
-    }
 }

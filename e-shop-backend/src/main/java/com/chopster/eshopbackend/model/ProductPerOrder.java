@@ -57,6 +57,4 @@ public class ProductPerOrder implements Serializable {
         this.quantity = quantity;
     }
 
-    public ProductPerOrder() {
-    }
 }

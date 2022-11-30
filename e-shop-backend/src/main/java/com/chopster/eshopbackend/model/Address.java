@@ -88,7 +88,5 @@ public class Address implements Serializable{
     public void setOrderList(List<Order> orderList) {
         this.orderList = orderList;
     }
-    public Address() {
-    }
 
 }
