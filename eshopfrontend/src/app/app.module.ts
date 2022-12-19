@@ -23,6 +23,9 @@ import { UsersComponent } from './pages/users/users.component';
 import { EditUserComponent } from './pages/users/views/edit/edit-user.component';
 import { CreateUserComponent } from './pages/users/views/create/create-user.component';
 import { DetailsUserComponent } from './pages/users/views/details/details-user.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { DetailsUserComponent } from './pages/users/views/details/details-user.c
     UsersComponent,
     CreateUserComponent,
     DetailsUserComponent,
-    EditUserComponent
+    EditUserComponent,
+    NavbarComponent,
+    FooterComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
