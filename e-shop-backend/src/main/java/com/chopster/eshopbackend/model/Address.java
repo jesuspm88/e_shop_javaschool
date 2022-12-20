@@ -26,11 +26,11 @@ public class Address implements Serializable{
     private String state;
     private String zip;
 
-    @ManyToMany(mappedBy = "ownedAdresses")
-    private List<User> addressOwners;
+    @ManyToMany(mappedBy = "ownedAddresses")
+    private List<Client> addressOwners;
 
     @OneToMany(mappedBy = "address")
-    private List<Order> orderList;
+    private List<Bucket> bucketList;
 
     public Long getId() {
         return id;
@@ -80,19 +80,19 @@ public class Address implements Serializable{
         this.zip = zip;
     }
 
-    public List<User> getAddressOwners() {
+    public List<Client> getAddressOwners() {
         return addressOwners;
     }
 
-    public void setAddressOwners(List<User> addressOwners) {
+    public void setAddressOwners(List<Client> addressOwners) {
         this.addressOwners = addressOwners;
     }
 
-    public List<Order> getOrderList() {
-        return orderList;
+    public List<Bucket> getBucketList() {
+        return bucketList;
     }
 
-    public void setOrderList(List<Order> orderList) {
-        this.orderList = orderList;
+    public void setBucketList(List<Bucket> bucketList) {
+        this.bucketList = bucketList;
     }
 }

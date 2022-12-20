@@ -8,19 +8,19 @@ import { environment } from "src/environments/environment";
   providedIn: 'root'
 })
 export class ProductService {
-  public apiServerUrl = environment.apiBaseUrl;
+  public apiServerUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
   public getProducts(): Observable<Product[]>{
-    return this.http.get<Product[]>(this.apiServerUrl + '/products/all')
+    return this.http.get<Product[]>(this.apiServerUrl + '/product/all')
 }
 
 public addProducts(product: Product): Observable<Product>{
-    return this.http.post<Product>(this.apiServerUrl + '/products/add', product);
+    return this.http.post<Product>(this.apiServerUrl + '/product/add', product);
 }
 
 public deleteProduct(id: number): Observable<void>{
-    return this.http.delete<void>(this.apiServerUrl + '/products/delete/' + id);
+    return this.http.delete<void>(this.apiServerUrl + '/product/delete/' + id);
 }
 }

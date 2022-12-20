@@ -10,17 +10,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-
 @Entity
-@Table(name = "payment_method")
-public class PaymentMethod implements Serializable {
+@Table(name = "state")
+public class State implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "paymentMethod")
+    @OneToMany(mappedBy = "state")
     private List<Bucket> bucketList;
+
     public Long getId() {
         return id;
     }
@@ -36,6 +37,7 @@ public class PaymentMethod implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
     public List<Bucket> getBucketList() {
         return bucketList;
     }

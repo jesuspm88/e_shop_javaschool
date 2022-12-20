@@ -32,7 +32,7 @@ public class Product implements Serializable{
     private Integer stock;
 
     @OneToMany(mappedBy = "product")
-    Set<ProductPerOrder> productsPerOrder;
+    Set<ProductPerBucket> productsPerBucket;
 
     public Long getId() {
         return id;
@@ -114,12 +114,12 @@ public class Product implements Serializable{
         this.stock = stock;
     }
 
-    public Set<ProductPerOrder> getProductsPerOrder() {
-        return productsPerOrder;
+    public Set<ProductPerBucket> getProductsPerBucket() {
+        return productsPerBucket;
     }
 
-    public void setProductsPerOrder(Set<ProductPerOrder> productsPerOrder) {
-        this.productsPerOrder = productsPerOrder;
+    public void setProductsPerBucket(Set<ProductPerBucket> productsPerBucket) {
+        this.productsPerBucket = productsPerBucket;
     }
 
 }
