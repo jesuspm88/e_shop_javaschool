@@ -1,1 +1,27 @@
-<p>sidebar works!</p>
+<div class="d-flex flex-column flex-shrink-0 text-white bg-dark" style="height: 100%;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-4">E-shop</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a [routerLink]="['/products']" class="nav-link text-white" [routerLinkActive]="['active']">
+          <svg class="bi me-2" width="16" height="16"></svg>
+          Products
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/addresses']" class="nav-link text-white" [routerLinkActive]="['active']">
+          <svg class="bi me-2" width="16" height="16"></svg>
+          Addresses
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/orders']" class="nav-link text-white" [routerLinkActive]="['active']">
+          <svg class="bi me-2" width="16" height="16"></svg>
+          Orders
+        </a>
+      </li>
+    </ul>
+  </div>

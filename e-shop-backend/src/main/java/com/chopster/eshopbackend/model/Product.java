@@ -24,6 +24,7 @@ public class Product implements Serializable{
     private Float volume;
     private String brand;
     private String color;
+
     private String imgUrl;
 
     @ManyToOne
